@@ -1,33 +1,242 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
-import cover from "../../assets/cases/epay.png";
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
-<Layout title="ePay — кейс">
-  <main class="mx-auto max-w-4xl px-6 py-16">
-    <a href={base} class="text-sm text-neutral-500 hover:text-neutral-900">&larr; Назад</a>
+<Layout title="ePayments — кейс">
+  <div class="flex flex-col gap-[60px] md:gap-[100px] items-center mt-[60px] md:mt-[100px]">
 
-    <h1 class="mt-6 text-3xl font-bold">ePay</h1>
-    <p class="mt-3 text-neutral-600">
-      Мобильное финтех приложение для самозанятых и тех, кто выплачивает зарплаты.
-    </p>
+    <!-- Hero -->
+    <section class="flex flex-col items-center gap-10 max-w-[675px] text-center">
+      <h1 class="font-['Roboto_Condensed'] font-medium text-[48px] md:text-[64px] leading-[56px] md:leading-[74px] text-[#212326]">
+        ePayments – финтех приложение
+      </h1>
+      <div class="flex gap-3">
+        <span class="font-['Inter'] text-[20px] md:text-[24px] leading-8 bg-[#eee0fb] text-[#9958d5] rounded-[20px] px-5 py-4">Mobile app</span>
+        <span class="font-['Inter'] text-[20px] md:text-[24px] leading-8 bg-[#e3e3f0] text-[#7a7ab6] rounded-[20px] px-5 py-4">b2c</span>
+      </div>
+    </section>
 
-    <div class="mt-10 overflow-hidden rounded-2xl">
-      <Image src={cover} alt="ePay" class="w-full" />
+    <!-- Cover -->
+    <div class="w-full h-[500px] md:h-[800px] rounded-[60px] md:rounded-[120px] bg-[#f32d41] overflow-hidden">
+      <!-- Placeholder: ePay cover image -->
     </div>
 
-    <div class="mt-10 space-y-8">
-      <div>
-        <h2 class="text-xl font-semibold">Задача</h2>
-        <p class="mt-2 text-neutral-600">Спроектировать мобильное приложение для управления финансами самозанятых и выплат сотрудникам.</p>
+    <!-- Позиционирование: Цели и задачи -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Позиционирование</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Цели и задачи
+          </h2>
+          <div class="flex flex-col gap-10 font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            <p>Из-за изменений бизнес целей возникла необходимость переработать мобильное приложение: обновить пользовательский сценарий и внедрить новый интерфейс.</p>
+            <p>Задачей было обновить UI приложения, сделав его более понятным и дружелюбным. Также нужно было учесть обратную связь от пользователей и внести UX-улучшения на ключевых экранах, чтобы устранить болевые точки и повысить удобство.</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h2 class="text-xl font-semibold">Решение</h2>
-        <p class="mt-2 text-neutral-600">Чистый мобильный интерфейс с фокусом на быстрых операциях, выбором тарифов и понятной навигацией.</p>
+    </section>
+
+    <!-- Summary -->
+    <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+      <div class="hidden md:block md:w-[331px] shrink-0"></div>
+      <p class="flex-1 font-['Inter'] font-medium text-[28px] md:text-[38px] leading-[40px] md:leading-[50px] text-[#212326]">
+        Редизайн продукта для устранения пользовательских болей, повышения ретеншена и роста количества транзакций в приложении.
+      </p>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Редизайн и запуск -->
+    <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326] w-full">
+      Редизайн и запуск
+    </h2>
+
+    <!-- Redesign showcase -->
+    <div class="w-full h-[400px] md:h-[724px] rounded-[60px] md:rounded-[120px] bg-[#f32d41] overflow-hidden">
+      <!-- Placeholder: Redesign showcase image -->
+    </div>
+
+    <!-- Про процесс -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Про процесс
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            Редизайн и запуск шли по плану: мы обновляли приложение поэтапно, начиная с экрана профиля и настроек. По мере приближения к MVP добавили пополнение счёта и экран с транзакциями.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UX tests -->
+    <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+      <div class="hidden md:block md:w-[331px] shrink-0"></div>
+      <div class="flex-1 flex flex-col gap-10">
+        <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+          UX tests
+        </h2>
+        <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+          На каждом этапе проектирования я проводила UX тестирования с нашими клиентами, корректируя механики и пользовательские пути после каждого тестирования.
+        </p>
       </div>
     </div>
-  </main>
+
+    <!-- Взаимодействие с командой -->
+    <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+      <div class="hidden md:block md:w-[331px] shrink-0"></div>
+      <div class="flex-1 flex flex-col gap-10">
+        <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+          Взаимодействие с командой
+        </h2>
+        <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+          На протяжении всего проекта я плотно работала с мобильными разработчиками: мы совместно искали решения и реализовывали их максимально эффективно.
+        </p>
+      </div>
+    </div>
+
+    <!-- Screens screenshot -->
+    <div class="w-full flex flex-col gap-6">
+      <div class="w-full h-[500px] md:h-[925px] rounded-[60px] md:rounded-[120px] bg-[#d7ddee] overflow-hidden">
+        <!-- Placeholder: App screens -->
+      </div>
+      <p class="font-['Roboto_Condensed'] italic text-[20px] md:text-[24px] leading-8 text-[#212326] text-center">Разные экраны приложения</p>
+    </div>
+
+    <!-- Результаты -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Результаты
+          </h2>
+          <ul class="list-disc pl-10 flex flex-col gap-2.5 font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            <li>Улучшенный UX повысил конверсию в ключевые действия, такие как пополнение счёта и внутренние переводы, на 6%.</li>
+            <li>Пользователи стали охотнее возвращаться в приложение, ретеншн вырос на 8%.</li>
+            <li>Ускоренные циклы разработки позволили быстрее выпускать обновления.</li>
+            <li>Чёткое видение продукта помогло согласовать приложение с бизнес-целями.</li>
+            <li>Более тесная работа между дизайнерами и разработчиками улучшила процессы и повысила качество результата.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Другие проекты -->
+    <section class="w-full flex flex-col gap-10 md:gap-[54px]">
+      <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326]">
+        Другие проекты
+      </h2>
+
+      <div class="flex flex-col md:flex-row gap-3 w-full">
+        <!-- Лекторий -->
+        <div class="flex-1 bg-black rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-white">Лекторий</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#adb3ba]">Мой первый проект в Skillbox. Сервис для записи на оффлайн и онлайн мероприятия</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#141414] overflow-hidden">
+            <!-- Placeholder: Лекторий cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </div>
+
+        <!-- Skillbox -->
+        <a href="#" class="group flex-1 bg-white rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Skillbox</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">Работа над конструктором лендингов для продвижения курсов и профессий</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#f3f3f8] overflow-hidden">
+            <!-- Placeholder: Skillbox cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start group-hover:bg-neutral-700 transition">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </a>
+
+        <!-- Youme -->
+        <div class="flex-1 bg-white rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Youme</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">Дейтинг приложение – собственный пет проект, созданный компанией друзей</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#141414] overflow-hidden">
+            <!-- Placeholder: Youme cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Contacts -->
+    <div id="contacts" class="bg-white rounded-[50px] w-full flex flex-col items-center gap-[54px] pt-10 pb-[60px] px-10">
+      <div class="font-['Roboto_Condensed'] font-medium text-[40px] md:text-[54px] leading-[50px] md:leading-[64px] text-center text-[#212326]">
+        <p>Вы долистали до конца!</p>
+        <p>Осталось только написать</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-[#2AABEE] flex items-center justify-center">
+          <svg width="28" height="24" viewBox="0 0 28 24" fill="white"><path d="M2.73 10.42L25.13 1.88c1.03-.37 1.93.25 1.59 1.83l-3.81 17.96c-.28 1.26-.97 1.57-1.97 0.98l-5.44-4.01-2.63 2.53c-.29.29-.53.53-1.09.53l.39-5.56 10.11-9.13c.44-.39-.1-.61-.68-.22L9.33 16.24l-5.36-1.68c-1.17-.37-1.19-1.17.24-1.73z"/></svg>
+        </div>
+        <a
+          href="https://t.me/Anna_Levitina"
+          class="font-['Inter'] font-medium text-[20px] leading-6 text-[#212326] hover:underline"
+          target="_blank"
+          rel="noopener"
+        >
+          @Anna_Levitina
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-16 h-16 flex items-center justify-center">
+          <span class="text-4xl font-bold text-[#4285F4]">G</span>
+        </div>
+        <a
+          href="mailto:anna.levi.designer@gmail.com"
+          class="font-['Inter'] font-medium text-[20px] leading-6 text-[#212326] hover:underline"
+        >
+          anna.levi.designer@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom logo -->
+    <footer>
+      <img src={`${base}logo.svg`} alt="Логотип" width="81" height="80" />
+    </footer>
+  </div>
 </Layout>
