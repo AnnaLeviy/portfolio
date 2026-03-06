@@ -1,33 +1,371 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
-import cover from "../../assets/cases/skyeng.png";
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <Layout title="Skyeng — кейс">
-  <main class="mx-auto max-w-4xl px-6 py-16">
-    <a href={base} class="text-sm text-neutral-500 hover:text-neutral-900">&larr; Назад</a>
+  <div class="flex flex-col gap-[60px] md:gap-[100px] items-center mt-[60px] md:mt-[100px]">
 
-    <h1 class="mt-6 text-3xl font-bold">Skyeng</h1>
-    <p class="mt-3 text-neutral-600">
-      Сервис по расширенному поиску и подбору контрагентов для бизнесов на рынке UK.
-    </p>
+    <!-- Hero -->
+    <section class="flex flex-col items-center gap-10 max-w-[675px] text-center">
+      <h1 class="font-['Roboto_Condensed'] font-medium text-[48px] md:text-[64px] leading-[56px] md:leading-[74px] text-[#212326]">
+        Мобильная витрина для Skyeng – Growth команда
+      </h1>
+      <div class="flex gap-3">
+        <span class="font-['Inter'] text-[16px] leading-8 border border-[#212326] rounded-[24px] px-5 py-4">Web</span>
+        <span class="font-['Inter'] text-[16px] leading-8 border border-[#212326] rounded-[24px] px-5 py-4">b2c</span>
+      </div>
+    </section>
 
-    <div class="mt-10 overflow-hidden rounded-2xl">
-      <Image src={cover} alt="Skyeng" class="w-full" />
+    <!-- Cover -->
+    <div class="w-full h-[500px] md:h-[800px] rounded-[40px] md:rounded-[120px] bg-[#2f89fc] overflow-hidden">
+      <!-- Placeholder: Skyeng cover image -->
     </div>
 
-    <div class="mt-10 space-y-8">
-      <div>
-        <h2 class="text-xl font-semibold">Задача</h2>
-        <p class="mt-2 text-neutral-600">Переработать экран оплаты и выбора тарифа для платформы онлайн-обучения английскому.</p>
+    <!-- О продукте -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продукт</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            О продукте
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            Я работала в Growth-команде. Наша цель была простой: чтобы пользователь мог купить продукт без участия менеджера. Для этого мы строили автоворонки и улучшали ключевые метрики.
+          </p>
+        </div>
       </div>
-      <div>
-        <h2 class="text-xl font-semibold">Решение</h2>
-        <p class="mt-2 text-neutral-600">Обновлённый UI с акцентом на конверсию: понятные тарифные планы, прозрачные цены и простой флоу оплаты.</p>
+    </section>
+
+    <!-- Проблемы пользователя -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Проблема</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Проблемы пользователя
+          </h2>
+          <div class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            <p class="mb-6">Основополагающим компонентом для метрики в первую оплату является витрина, но на мобильных устройствах она была сделана неудобно. Из-за этого пользователи сталкивались с проблемами, например:</p>
+            <ul class="list-disc pl-10 flex flex-col gap-2.5">
+              <li>Сравнение тарифов создаёт слишком длинный и перегруженный путь к витрине;</li>
+              <li>Тарифы плохо адаптированы под мобильные устройства, слишком много текста;</li>
+              <li>Пользователь теряется в цифрах;</li>
+              <li>Вкладки витрины не отображают реальности;</li>
+              <li>Нет информации о возврате средств.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stat callout -->
+    <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+      <div class="hidden md:block md:w-[331px] shrink-0"></div>
+      <p class="flex-1 font-['Inter'] font-medium text-[28px] md:text-[38px] leading-[40px] md:leading-[50px] text-[#212326]">
+        Основной трафик в Skyeng идет с мобильных устройств — более 70%. Однако мобильная витрина была совершенно не адаптирована под мобильные паттерны, что негативно влияло на первые оплаты.
+      </p>
+    </div>
+
+    <!-- Old design screenshot -->
+    <div class="w-full flex flex-col gap-6">
+      <div class="w-full h-[500px] md:h-[1076px] rounded-[60px] md:rounded-[120px] bg-white overflow-hidden">
+        <!-- Placeholder: Old tariff design -->
+      </div>
+      <p class="font-['Roboto_Condensed'] italic text-[20px] md:text-[24px] leading-8 text-[#212326] text-center">Старый дизайн тарифов и витрины</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Исследования -->
+    <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326] w-full">
+      Исследования
+    </h2>
+
+    <!-- Бенчмарк -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Исследования</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Бенчмарк
+          </h2>
+          <div class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            <p class="mb-6">Я проанализировала приложения, которые имеют автоворонку и работают с возражениями клиентов до оплаты. Вот некоторые интересные наблюдения, которые я выделила:</p>
+            <ul class="list-disc pl-10 flex flex-col gap-2.5">
+              <li>Объяснение преимущества подписки;</li>
+              <li>Персональное предложение на основе квиза/опроса;</li>
+              <li>Скидка за оплату сейчас;</li>
+              <li>Предвыбранный самый дорогой пакет;</li>
+              <li>Удобное сравнение тарифов.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benchmark image -->
+    <div class="w-full h-[400px] md:h-[814px] rounded-[40px] md:rounded-[60px] bg-white overflow-hidden">
+      <!-- Placeholder: Benchmark analysis image -->
+    </div>
+
+    <!-- UX tests -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Исследования</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            UX tests
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            Я создала первый прототип и отправила его на немодерируемое тестирование. В ходе тестирования я спрашивала пользователей об их ожиданиях и эмоциях. Вот примеры вопросов, которые я задавала пользователям:
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UX test mockup + questions -->
+    <div class="w-full h-[500px] md:h-[1076px] rounded-[40px] md:rounded-[60px] bg-white overflow-hidden">
+      <!-- Placeholder: UX test mockup with questions -->
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Дизайн эксперимент -->
+    <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326] w-full">
+      Дизайн эксперимент
+    </h2>
+
+    <!-- Процесс -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Процесс
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            Я упростила пользовательский путь и упростила подачу информации о многочисленных тарифах на странице. После изменений пользователи начали взаимодействовать с витриной на 40% больше. Выросла вовлечённость и улучшились метрики.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Изменения в витрине -->
+    <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+      <div class="hidden md:block md:w-[331px] shrink-0"></div>
+      <div class="flex-1 flex flex-col gap-10">
+        <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+          Изменения в витрине
+        </h2>
+        <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+          Вместо множества цен и кнопок теперь отображается одна цена и понятный призыв к действию. Добавлена динамическая информация о подарках и бонусах. При выборе пакета все данные обновляются под него.
+        </p>
       </div>
     </div>
-  </main>
+
+    <!-- Было/Стало: Витрина -->
+    <div class="w-full flex flex-col gap-6">
+      <div class="w-full h-[500px] md:h-[1076px] rounded-[40px] md:rounded-[60px] bg-white overflow-hidden">
+        <!-- Placeholder: Before/After storefront -->
+      </div>
+    </div>
+
+    <!-- Сравнение тарифов -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Сравнение тарифов
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            Сравнение тарифов я перенесла в модальное окно, чтобы пользователь мог сосредоточиться на выборе. Горизонтальный скролл позволяет удобно просматривать и сравнивать варианты.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Было/Стало: Тарифы -->
+    <div class="w-full h-[500px] md:h-[1076px] rounded-[40px] md:rounded-[60px] bg-white overflow-hidden">
+      <!-- Placeholder: Before/After tariff comparison -->
+    </div>
+
+    <!-- Первый экран -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Первый экран
+          </h2>
+          <p class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            В следующей итерации мы переделали первый экран и согласовали посылы с витриной. В итоге до витрины стали доскролливать в 2 раза чаще.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Было/Стало: Первый экран -->
+    <div class="w-full h-[500px] md:h-[1076px] rounded-[40px] md:rounded-[60px] bg-white overflow-hidden">
+      <!-- Placeholder: Before/After first screen -->
+    </div>
+
+    <!-- Результат -->
+    <section class="w-full flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
+          <div class="flex items-center gap-3">
+            <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
+            <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Продуктовый кейс</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-10">
+          <h2 class="font-['Roboto_Condensed'] font-medium text-[36px] md:text-[46px] leading-[44px] md:leading-[54px] text-[#212326]">
+            Результат
+          </h2>
+          <div class="font-['Inter'] font-medium text-[20px] md:text-[26px] leading-[32px] md:leading-[40px] text-[#212326]">
+            <p class="mb-6">Визуальное упрощение и сокращение пути пользователя к витрине значительно увеличило ключевые показатели в среднем на 15%. Метрики, которые удалось нарастить:</p>
+            <ul class="list-disc pl-10 flex flex-col gap-2.5 mb-6">
+              <li>Онбординг → Витрина</li>
+              <li>Клик по кнопке «Оплатить»</li>
+              <li>Первые оплаты</li>
+            </ul>
+            <p>Эти изменения также оказывают положительное влияние на общие показатели платежей, средний прирост составляет х2 для всех платежей.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Другие проекты -->
+    <section class="w-full flex flex-col gap-10 md:gap-[54px]">
+      <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326]">
+        Другие проекты
+      </h2>
+
+      <div class="flex flex-col md:flex-row gap-3 w-full">
+        <div class="flex-1 bg-white rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Лекторий</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">Мой первый проект в Skillbox. Сервис для записи на оффлайн и онлайн мероприятия</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#141414] overflow-hidden">
+            <!-- Placeholder: Лекторий cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </div>
+
+        <a href="#" class="group flex-1 bg-white rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Skillbox</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">Работа над конструктором лендингов для продвижения курсов и профессий</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#f3f3f8] overflow-hidden">
+            <!-- Placeholder: Skillbox cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start group-hover:bg-neutral-700 transition">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </a>
+
+        <div class="flex-1 bg-white rounded-[50px] flex flex-col justify-between gap-10 p-10">
+          <div class="flex flex-col gap-5">
+            <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Youme</h3>
+            <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">Дейтинг приложение – собственный пет проект, созданный компанией друзей</p>
+          </div>
+          <div class="w-full h-[240px] rounded-[40px] bg-[#141414] overflow-hidden">
+            <!-- Placeholder: Youme cover -->
+          </div>
+          <div class="bg-[#1b1c1d] rounded-[24px] px-8 py-5 self-start">
+            <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-neutral-200"></div>
+
+    <!-- Contacts -->
+    <div id="contacts" class="bg-white rounded-[50px] w-full flex flex-col items-center gap-[54px] pt-10 pb-[60px] px-10">
+      <div class="font-['Roboto_Condensed'] font-medium text-[40px] md:text-[54px] leading-[50px] md:leading-[64px] text-center text-[#212326]">
+        <p>Вы долистали до конца!</p>
+        <p>Осталось только написать</p>
+      </div>
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-[#2AABEE] flex items-center justify-center">
+          <svg width="28" height="24" viewBox="0 0 28 24" fill="white"><path d="M2.73 10.42L25.13 1.88c1.03-.37 1.93.25 1.59 1.83l-3.81 17.96c-.28 1.26-.97 1.57-1.97 0.98l-5.44-4.01-2.63 2.53c-.29.29-.53.53-1.09.53l.39-5.56 10.11-9.13c.44-.39-.1-.61-.68-.22L9.33 16.24l-5.36-1.68c-1.17-.37-1.19-1.17.24-1.73z"/></svg>
+        </div>
+        <a
+          href="https://t.me/Anna_Levitina"
+          class="font-['Inter'] font-medium text-[20px] leading-6 text-[#212326] hover:underline"
+          target="_blank"
+          rel="noopener"
+        >
+          @Anna_Levitina
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center gap-5">
+        <div class="w-16 h-16 flex items-center justify-center">
+          <span class="text-4xl font-bold text-[#4285F4]">G</span>
+        </div>
+        <a
+          href="mailto:anna.levi.designer@gmail.com"
+          class="font-['Inter'] font-medium text-[20px] leading-6 text-[#212326] hover:underline"
+        >
+          anna.levi.designer@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom logo -->
+    <footer>
+      <img src={`${base}logo.svg`} alt="Логотип" width="81" height="80" />
+    </footer>
+  </div>
 </Layout>
