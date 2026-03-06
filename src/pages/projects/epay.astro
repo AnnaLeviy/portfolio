@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import cover from "../../assets/cases/epay.png";
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+---
+
+<Layout title="ePay — кейс">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <a href={base} class="text-sm text-neutral-500 hover:text-neutral-900">&larr; Назад</a>
+
+    <h1 class="mt-6 text-3xl font-bold">ePay</h1>
+    <p class="mt-3 text-neutral-600">
+      Мобильное финтех приложение для самозанятых и тех, кто выплачивает зарплаты.
+    </p>
+
+    <div class="mt-10 overflow-hidden rounded-2xl">
+      <Image src={cover} alt="ePay" class="w-full" />
+    </div>
+
+    <div class="mt-10 space-y-8">
+      <div>
+        <h2 class="text-xl font-semibold">Задача</h2>
+        <p class="mt-2 text-neutral-600">Спроектировать мобильное приложение для управления финансами самозанятых и выплат сотрудникам.</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold">Решение</h2>
+        <p class="mt-2 text-neutral-600">Чистый мобильный интерфейс с фокусом на быстрых операциях, выбором тарифов и понятной навигацией.</p>
+      </div>
+    </div>
+  </main>
+</Layout>

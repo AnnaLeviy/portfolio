@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import cover from "../../assets/cases/skyeng.png";
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+---
+
+<Layout title="Skyeng — кейс">
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <a href={base} class="text-sm text-neutral-500 hover:text-neutral-900">&larr; Назад</a>
+
+    <h1 class="mt-6 text-3xl font-bold">Skyeng</h1>
+    <p class="mt-3 text-neutral-600">
+      Сервис по расширенному поиску и подбору контрагентов для бизнесов на рынке UK.
+    </p>
+
+    <div class="mt-10 overflow-hidden rounded-2xl">
+      <Image src={cover} alt="Skyeng" class="w-full" />
+    </div>
+
+    <div class="mt-10 space-y-8">
+      <div>
+        <h2 class="text-xl font-semibold">Задача</h2>
+        <p class="mt-2 text-neutral-600">Переработать экран оплаты и выбора тарифа для платформы онлайн-обучения английскому.</p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold">Решение</h2>
+        <p class="mt-2 text-neutral-600">Обновлённый UI с акцентом на конверсию: понятные тарифные планы, прозрачные цены и простой флоу оплаты.</p>
+      </div>
+    </div>
+  </main>
+</Layout>

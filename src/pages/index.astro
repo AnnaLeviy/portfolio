@@ -1,56 +1,220 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
+import bringoCover from "../assets/cases/bringo.png";
+
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
-const projects = [
+
+const companies = [
+  { name: "Skillbox", letter: "S", bg: "bg-orange-400" },
+  { name: "Skyeng", letter: "▶", bg: "bg-blue-500" },
+  { name: "Magnit", letter: "M", bg: "bg-red-500" },
+  { name: "Bringo", letter: "B", bg: "bg-blue-400" },
+  { name: "ePayments", letter: "@", bg: "bg-violet-500" },
+];
+
+const cases = [
   {
-    slug: "brand-identity",
-    title: "Айдентика бренда",
-    description: "Разработка визуальной идентичности для стартапа в сфере образования",
-    tags: ["Брендинг", "Логотип", "Гайдлайн"],
+    slug: "bringo",
+    title: "Bringo",
+    description: "Сервис по расширенному поиску и подбору контрагентов для бизнесов на рынке UK",
   },
   {
-    slug: "mobile-app",
-    title: "Мобильное приложение",
-    description: "Дизайн интерфейса приложения для планирования задач",
-    tags: ["UI/UX", "Mobile", "Figma"],
+    slug: "epay",
+    title: "ePay",
+    description: "Мобильное финтех приложение для самозанятых и тех, кто выплачивает зарплаты",
   },
   {
-    slug: "web-redesign",
-    title: "Редизайн сайта",
-    description: "Обновление визуала и структуры корпоративного сайта",
-    tags: ["Web", "UI/UX", "Прототип"],
+    slug: "skyeng",
+    title: "Skyeng",
+    description: "Сервис по расширенному поиску и подбору контрагентов для бизнесов на рынке UK",
   },
 ];
 ---
 
 <Layout>
-  <main class="mx-auto max-w-5xl px-6">
-    <section class="py-16">
-      <h1 class="text-3xl font-bold">Привет, я дизайнер</h1>
-      <p class="mt-3 max-w-xl text-neutral-600">
-        Делаю айдентику, интерфейсы и всё, что между ними. Ниже — избранные проекты.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-6 pt-12 pb-16 text-center">
+    <h1 class="mx-auto max-w-2xl text-4xl font-bold leading-[1.15] md:text-[3.5rem]">
+      Я&nbsp;Аня&nbsp;— &nbsp;дизайню интерфейсы. Это моё портфолио.
+    </h1>
+    <div class="mt-8">
+      <a
+        href="#"
+        class="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-sm font-medium text-white transition hover:bg-neutral-700"
+      >
+        Резюме PDF
+      </a>
+    </div>
+    <!-- Placeholder: hero image (laptop on blue bg) -->
+    <div class="mx-auto mt-12 aspect-[16/9] max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-blue-400 to-blue-500"></div>
+  </section>
 
-    <section class="grid gap-8 pb-20 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((p) => (
-        <a
-          href={`${base}projects/${p.slug}/`}
-          class="group block rounded-xl border border-neutral-200 p-5 transition hover:border-neutral-400"
-        >
-          <div class="mb-4 aspect-[4/3] rounded-lg bg-neutral-100" />
-          <h2 class="font-semibold group-hover:underline">{p.title}</h2>
-          <p class="mt-1 text-sm text-neutral-500">{p.description}</p>
-          <div class="mt-3 flex flex-wrap gap-2">
-            {p.tags.map((tag) => (
-              <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs text-neutral-600">
-                {tag}
-              </span>
-            ))}
+  <!-- Experience -->
+  <section class="mx-auto max-w-6xl px-6 pb-16">
+    <div class="flex items-start gap-6 md:gap-12">
+      <div class="flex shrink-0 items-center gap-3 pt-1">
+        <span class="block h-px w-8 bg-blue-400"></span>
+        <span class="whitespace-nowrap text-[10px] font-semibold uppercase tracking-widest text-neutral-400">Опыт работы</span>
+      </div>
+      <p class="max-w-lg text-base leading-relaxed text-neutral-500">
+        Я успела поработать с отличными командами и многому научиться.
+        Спасибо этим компаниям за доверие, вызовы и вдохновение.
+      </p>
+    </div>
+    <div class="mt-10 flex flex-wrap justify-start gap-8 md:gap-12">
+      {companies.map((c) => (
+        <div class="flex flex-col items-center gap-2.5">
+          <div class:list={["flex h-16 w-16 items-center justify-center rounded-full text-xl font-bold text-white", c.bg]}>
+            {c.letter}
           </div>
-        </a>
+          <span class="text-xs text-neutral-400">{c.name}</span>
+        </div>
       ))}
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section id="cases" class="mx-auto max-w-6xl px-6 pb-24">
+    <h2 class="mb-10 text-center text-3xl font-bold md:text-4xl">Продуктовые кейсы</h2>
+
+    <!-- Bringo: large image card left, text card right -->
+    <a href={`${base}projects/bringo/`} class="group mb-6 grid gap-5 md:grid-cols-[1.4fr_1fr]">
+      <div class="flex items-center justify-center overflow-hidden rounded-3xl bg-blue-500 p-8 md:p-12">
+        <Image
+          src={bringoCover}
+          alt="Bringo"
+          class="w-full max-w-md rounded-xl object-cover transition duration-300 group-hover:scale-[1.02]"
+          widths={[600, 1200]}
+          sizes="600px"
+        />
+      </div>
+      <div class="flex flex-col justify-center rounded-3xl bg-neutral-50 p-8 md:p-10">
+        <h3 class="text-2xl font-bold">{cases[0].title}</h3>
+        <p class="mt-3 text-sm leading-relaxed text-neutral-500">{cases[0].description}</p>
+        <div class="mt-6">
+          <span class="inline-flex rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-medium text-white transition group-hover:bg-neutral-700">
+            Подробнее
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ePay: text card left, two image cards right -->
+    <a href={`${base}projects/epay/`} class="group mb-6 grid gap-5 md:grid-cols-3">
+      <div class="flex flex-col justify-center rounded-3xl bg-neutral-50 p-8 md:p-10">
+        <h3 class="text-2xl font-bold">{cases[1].title}</h3>
+        <p class="mt-3 text-sm leading-relaxed text-neutral-500">{cases[1].description}</p>
+        <div class="mt-6">
+          <span class="inline-flex rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-medium text-white transition group-hover:bg-neutral-700">
+            Подробнее
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-400 to-blue-500 p-6">
+        <Image
+          src={bringoCover}
+          alt="ePay"
+          class="w-full max-w-xs rounded-xl object-cover"
+          widths={[400, 800]}
+          sizes="400px"
+        />
+      </div>
+      <div class="flex items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-rose-400 to-pink-500 p-6">
+        <Image
+          src={bringoCover}
+          alt="ePay"
+          class="w-full max-w-xs rounded-xl object-cover"
+          widths={[400, 800]}
+          sizes="400px"
+        />
+      </div>
+    </a>
+
+    <!-- Skyeng: large image card left, text card right -->
+    <a href={`${base}projects/skyeng/`} class="group grid gap-5 md:grid-cols-[1.4fr_1fr]">
+      <div class="flex items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-sky-300 to-blue-400 p-8 md:p-12">
+        <Image
+          src={bringoCover}
+          alt="Skyeng"
+          class="w-full max-w-md rounded-xl object-cover transition duration-300 group-hover:scale-[1.02]"
+          widths={[600, 1200]}
+          sizes="600px"
+        />
+      </div>
+      <div class="flex flex-col justify-center rounded-3xl bg-neutral-50 p-8 md:p-10">
+        <h3 class="text-2xl font-bold">{cases[2].title}</h3>
+        <p class="mt-3 text-sm leading-relaxed text-neutral-500">{cases[2].description}</p>
+        <div class="mt-6">
+          <span class="inline-flex rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-medium text-white transition group-hover:bg-neutral-700">
+            Подробнее
+          </span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- About -->
+  <section class="mx-auto max-w-6xl px-6 pb-20">
+    <h2 class="text-center text-3xl font-bold md:text-4xl">Обо мне</h2>
+
+    <div class="mt-8 flex items-start gap-6 md:gap-12">
+      <div class="flex shrink-0 items-center gap-3 pt-1">
+        <span class="block h-px w-8 bg-blue-400"></span>
+        <span class="whitespace-nowrap text-[10px] font-semibold uppercase tracking-widest text-neutral-400">Давайте знакомиться</span>
+      </div>
+      <p class="max-w-lg text-base leading-relaxed text-neutral-500">
+        Вне работы рисую мемы: красками и в 3D. Жила три года на Пхукете —
+        научилась есть острое и смотреть на всё проще.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div class="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-green-100 to-emerald-200"></div>
+      <div class="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-pink-100 to-rose-200"></div>
+      <div class="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-amber-100 to-orange-200"></div>
+      <div class="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-violet-100 to-purple-200"></div>
+    </div>
+  </section>
+
+  <!-- Footer / Contacts -->
+  <section id="contacts" class="mx-auto max-w-6xl px-6 pb-12">
+    <div class="rounded-[2rem] bg-gradient-to-br from-green-50 via-blue-50 to-violet-50 px-8 py-16 text-center md:py-20">
+      <h2 class="text-2xl font-bold leading-snug md:text-3xl">
+        Вы долистали до конца!<br />Осталось только написать
+      </h2>
+      <div class="mt-10 flex flex-col items-center gap-5">
+        <div class="flex flex-col items-center gap-1.5">
+          <!-- Telegram icon placeholder -->
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-sm text-white">✈</div>
+          <a
+            href="https://t.me/Anna_Levitina"
+            class="text-sm text-neutral-600 transition hover:text-neutral-900"
+            target="_blank"
+            rel="noopener"
+          >
+            @Anna_Levitina
+          </a>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <!-- Gmail icon placeholder -->
+          <div class="flex h-10 w-10 items-center justify-center rounded-full text-xl">
+            <span class="text-2xl">G</span>
+          </div>
+          <a
+            href="mailto:anna.levi.designer@gmail.com"
+            class="text-sm text-neutral-600 transition hover:text-neutral-900"
+          >
+            anna.levi.designer@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom logo -->
+  <footer class="flex justify-center pb-10 pt-4">
+    <img src={`${base}logo.svg`} alt="Логотип" width="32" height="30" />
+  </footer>
 </Layout>

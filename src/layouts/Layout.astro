@@ -5,7 +5,7 @@ interface Props {
   title?: string;
 }
 
-const { title = "Портфолио" } = Astro.props;
+const { title = "Аня — дизайн интерфейсов" } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
@@ -18,12 +18,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
     <slot name="head" />
   </head>
   <body class="bg-white text-neutral-900 antialiased">
-    <header class="border-b border-neutral-200">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href={base} class="text-lg font-semibold">Портфолио</a>
-        <div class="flex gap-6 text-sm text-neutral-600">
-          <a href={`${base}projects/brand-identity/`} class="hover:text-neutral-900">Айдентика</a>
-          <a href={`${base}projects/mobile-app/`} class="hover:text-neutral-900">Приложение</a>
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <a href={base}>
+          <img src={`${base}logo.svg`} alt="Логотип" width="40" height="38" />
+        </a>
+        <div class="flex gap-8 text-sm font-medium">
+          <a href={base} class="text-neutral-900">Главная</a>
+          <a href="#cases" class="text-neutral-400 hover:text-neutral-900 transition">Кейсы</a>
+          <a href="#contacts" class="text-neutral-400 hover:text-neutral-900 transition">Контакты</a>
         </div>
       </nav>
     </header>
