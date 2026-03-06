@@ -31,11 +31,11 @@ const cases = [
 ---
 
 <Layout>
-  <div class="flex flex-col gap-[100px] items-center mt-[100px]">
+  <div class="flex flex-col gap-[60px] md:gap-[100px] items-center mt-[60px] md:mt-[100px]">
 
     <!-- Hero -->
-    <section class="flex flex-col items-center gap-10 w-[670px] max-w-full text-center">
-      <h1 class="font-['Roboto_Condensed'] font-medium text-[64px] leading-[70px] text-[#212326]">
+    <section class="flex flex-col items-center gap-10 md:w-[670px] max-w-full text-center">
+      <h1 class="font-['Roboto_Condensed'] font-medium text-[58px] md:text-[64px] leading-[64px] md:leading-[70px] text-[#212326]">
         Я Аня —  дизайню интерфейсы. Это моё портфолио.
       </h1>
       <a
@@ -51,21 +51,21 @@ const cases = [
 
     <!-- Experience -->
     <section class="w-full flex flex-col gap-10">
-      <div class="flex gap-3 items-start w-full">
-        <div class="w-[331px] shrink-0 flex items-start pt-3">
+      <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+        <div class="md:w-[331px] shrink-0 flex items-start pt-3">
           <div class="flex items-center gap-3">
             <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
             <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Опыт работы</span>
           </div>
         </div>
-        <p class="flex-1 font-['Inter'] font-medium text-[38px] leading-[50px] text-[#212326]">
+        <p class="flex-1 font-['Inter'] font-medium text-[28px] leading-[40px] md:text-[38px] md:leading-[50px] text-[#212326]">
           Я успела поработать с отличными командами и многому научиться. Спасибо этим компаниям за доверие, вызовы и вдохновение.
         </p>
       </div>
 
-      <div class="flex gap-3 w-full">
+      <div class="flex gap-3 w-full md:overflow-visible overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-5 px-5 md:mx-0 md:px-0 scrollbar-hide">
         {companies.map((c) => (
-          <div class="flex-1 bg-white rounded-[80px] h-[238px] flex flex-col items-center justify-end gap-5 pb-[58px]">
+          <div class="min-w-[150px] md:min-w-0 md:flex-1 bg-white rounded-[80px] h-[238px] flex flex-col items-center justify-end gap-5 pb-[58px] snap-start shrink-0 md:shrink">
             <!-- Placeholder: company logo -->
             <div class="w-[70px] h-[70px] rounded-full bg-neutral-100"></div>
             <span class="font-['Inter'] font-medium text-[20px] leading-6 text-[#212326]">{c.name}</span>
@@ -78,18 +78,18 @@ const cases = [
     <div class="w-full h-px bg-neutral-200"></div>
 
     <!-- Cases -->
-    <section id="cases" class="w-full flex flex-col gap-[54px]">
-      <h2 class="font-['Roboto_Condensed'] font-medium text-[64px] leading-[70px] text-center text-[#212326]">
+    <section id="cases" class="w-full flex flex-col gap-10 md:gap-[54px]">
+      <h2 class="font-['Roboto_Condensed'] font-medium text-[54px] md:text-[64px] leading-[64px] md:leading-[70px] text-center text-[#212326]">
         Продуктовые кейсы
       </h2>
 
-      <div class="flex flex-col gap-[54px]">
+      <div class="flex flex-col gap-10 md:gap-[54px]">
         <!-- Bringo -->
-        <a href={`${base}projects/bringo/`} class="group flex gap-3 items-end w-full">
-          <div class="w-[903px] h-[501px] rounded-[120px] bg-[#2f8afc] overflow-hidden shrink-0">
+        <a href={`${base}projects/bringo/`} class="group flex flex-col md:flex-row gap-3 md:items-end w-full">
+          <div class="w-full h-[500px] rounded-[100px] md:rounded-[120px] bg-[#2f8afc] overflow-hidden md:min-w-0 md:flex-1">
             <!-- Placeholder: Bringo cover -->
           </div>
-          <div class="bg-white rounded-[50px] w-[445px] h-[501px] shrink-0 flex flex-col justify-between p-10">
+          <div class="bg-white rounded-[50px] w-full md:w-[445px] md:h-[501px] md:shrink-0 flex flex-col justify-between gap-10 p-10">
             <div class="flex flex-col gap-5">
               <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Bringo</h3>
               <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">{cases[0].description}</p>
@@ -101,8 +101,8 @@ const cases = [
         </a>
 
         <!-- ePay -->
-        <a href={`${base}projects/epay/`} class="group flex gap-3 items-center w-full">
-          <div class="bg-white rounded-[50px] w-[445px] h-[501px] shrink-0 flex flex-col justify-between p-10">
+        <a href={`${base}projects/epay/`} class="group flex flex-col md:flex-row gap-3 md:items-center w-full">
+          <div class="bg-white rounded-[50px] w-full md:w-[445px] md:h-[501px] md:shrink-0 flex flex-col justify-between gap-10 p-10 order-2 md:order-1">
             <div class="flex flex-col gap-5">
               <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">ePay</h3>
               <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">{cases[1].description}</p>
@@ -111,20 +111,20 @@ const cases = [
               <span class="font-['Inter'] font-medium text-[17px] leading-8 tracking-[0.34px] text-white">Подробнее</span>
             </div>
           </div>
-          <div class="h-[501px] rounded-[120px] bg-gradient-to-b from-[#f22d40] to-[#ff475e] overflow-hidden shrink-0 w-[446px]">
+          <div class="h-[500px] rounded-[100px] md:rounded-[120px] bg-gradient-to-b from-[#f22d40] to-[#ff475e] overflow-hidden w-full md:w-auto md:min-w-0 md:flex-1 order-1 md:order-2">
             <!-- Placeholder: ePay cover 1 -->
           </div>
-          <div class="h-[501px] rounded-[120px] bg-gradient-to-b from-[#1f1fda] to-[#0f0fa9] overflow-hidden shrink-0 w-[445px]">
+          <div class="hidden md:block h-[501px] rounded-[120px] bg-gradient-to-b from-[#1f1fda] to-[#0f0fa9] overflow-hidden md:min-w-0 md:flex-1 order-3">
             <!-- Placeholder: ePay cover 2 -->
           </div>
         </a>
 
         <!-- Skyeng -->
-        <a href={`${base}projects/skyeng/`} class="group flex gap-3 items-end w-full">
-          <div class="w-[903px] h-[500px] rounded-[120px] bg-[#2f89fc] overflow-hidden shrink-0">
+        <a href={`${base}projects/skyeng/`} class="group flex flex-col md:flex-row gap-3 md:items-end w-full">
+          <div class="w-full h-[500px] rounded-[100px] md:rounded-[120px] bg-[#2f89fc] overflow-hidden md:min-w-0 md:flex-1">
             <!-- Placeholder: Skyeng cover -->
           </div>
-          <div class="bg-white rounded-[50px] w-[445px] h-[501px] shrink-0 flex flex-col justify-between p-10">
+          <div class="bg-white rounded-[50px] w-full md:w-[445px] md:h-[501px] md:shrink-0 flex flex-col justify-between gap-10 p-10">
             <div class="flex flex-col gap-5">
               <h3 class="font-['Inter'] font-semibold text-[44px] leading-[52px] text-[#212326]">Skyeng</h3>
               <p class="font-['Inter'] font-medium text-[15px] leading-[22px] text-[#212326]">{cases[2].description}</p>
@@ -141,30 +141,30 @@ const cases = [
     <div class="w-full h-px bg-neutral-200"></div>
 
     <!-- About -->
-    <section class="w-full flex flex-col gap-[54px]">
+    <section class="w-full flex flex-col gap-10 md:gap-[54px]">
       <h2 class="font-['Roboto_Condensed'] font-medium text-[64px] leading-[70px] text-center text-[#212326]">
         Обо мне
       </h2>
 
       <div class="flex flex-col gap-10">
-        <div class="flex gap-3 items-start w-full">
-          <div class="w-[331px] shrink-0 flex items-start pt-3">
+        <div class="flex flex-col md:flex-row gap-3 items-start w-full">
+          <div class="md:w-[331px] shrink-0 flex items-start pt-3">
             <div class="flex items-center gap-3">
               <div class="w-[102px] h-[2px] bg-gradient-to-r from-[#00c1ff] via-[#2f8afc] to-[#62bd67]"></div>
               <span class="font-['Roboto_Condensed'] text-[16px] uppercase leading-8 whitespace-nowrap text-[#212326]">Давайте знакомиться</span>
             </div>
           </div>
-          <p class="flex-1 font-['Inter'] font-medium text-[38px] leading-[50px] text-[#212326]">
+          <p class="flex-1 font-['Inter'] font-medium text-[28px] leading-[40px] md:text-[38px] md:leading-[50px] text-[#212326]">
             Вне работы рисую мемы: красками и в 3D. Жила три года на Пхукете — научилась есть острое и смотреть на всё проще.
           </p>
         </div>
 
-        <div class="flex gap-3 w-full">
+        <div class="flex flex-col md:flex-row gap-3 w-full">
           <!-- Placeholder: 4 about images -->
-          <div class="flex-1 h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
-          <div class="flex-1 h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
-          <div class="flex-1 h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
-          <div class="flex-1 h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
+          <div class="md:flex-1 h-[423px] md:h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
+          <div class="md:flex-1 h-[423px] md:h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
+          <div class="md:flex-1 h-[423px] md:h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
+          <div class="md:flex-1 h-[423px] md:h-[320px] rounded-[100px] bg-white overflow-hidden"></div>
         </div>
       </div>
 
