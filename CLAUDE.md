@@ -12,7 +12,7 @@ Personal portfolio site built with Astro 5, Tailwind CSS 4, and MDX. Deployed to
 - `pnpm build` — Production build to `./dist/`
 - `pnpm preview` — Preview production build locally
 
-Package manager is **pnpm** (v9 in CI). No test or lint scripts are configured.
+Package manager is **pnpm** (v10 in CI). No test or lint scripts are configured.
 
 ## Architecture
 
@@ -24,6 +24,8 @@ Package manager is **pnpm** (v9 in CI). No test or lint scripts are configured.
 - `astro.config.mjs` — Site config with `base: "/portfolio"` for GitHub Pages subpath deployment
 - CI deploys on push to `main` via `.github/workflows/deploy.yml`
 
-## Notes
+## Conventions
 
+- Commit messages: Angular style (`fix:`, `feat:`, `chore:`, etc.), no Co-Authored-By
 - The site language is Russian (`lang="ru"`)
+- `BASE_URL` does not have a trailing slash — always normalize with `.replace(/\/?$/, "/")` before concatenating paths
