@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title = "Портфолио" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 ---
 
 <!doctype html>
@@ -19,10 +20,10 @@ const { title = "Портфолио" } = Astro.props;
   <body class="bg-white text-neutral-900 antialiased">
     <header class="border-b border-neutral-200">
       <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href={`${import.meta.env.BASE_URL}`} class="text-lg font-semibold">Портфолио</a>
+        <a href={base} class="text-lg font-semibold">Портфолио</a>
         <div class="flex gap-6 text-sm text-neutral-600">
-          <a href={`${import.meta.env.BASE_URL}projects/brand-identity/`} class="hover:text-neutral-900">Айдентика</a>
-          <a href={`${import.meta.env.BASE_URL}projects/mobile-app/`} class="hover:text-neutral-900">Приложение</a>
+          <a href={`${base}projects/brand-identity/`} class="hover:text-neutral-900">Айдентика</a>
+          <a href={`${base}projects/mobile-app/`} class="hover:text-neutral-900">Приложение</a>
         </div>
       </nav>
     </header>
